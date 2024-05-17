@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function Blog() {
     return (
         <main>
@@ -7,8 +9,10 @@ export default function Blog() {
             <ul>
                 {BLOGS.map((blog, i) => (
                     <li key={i}>
-                        <h2>{blog.title}</h2>
-                        <p>{blog.content}</p>
+                        <Link href={`/blog/${i}`} >
+                            <h2>{blog.title}</h2>
+                            <p>{blog.content}</p>
+                        </Link>
                     </li>
                 ))}
             </ul>
@@ -16,7 +20,7 @@ export default function Blog() {
     )
 }
 
-const BLOGS = [
+export const BLOGS = [
     {
         title: 'Blog 1',
         date: '2023-01-01',

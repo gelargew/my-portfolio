@@ -1,5 +1,6 @@
+import { BLOGS } from '@/blog'
 import { useRouter } from 'next/router'
-import { BLOGS } from './index'
+
 
 export default function Blog() {
     const router = useRouter()
